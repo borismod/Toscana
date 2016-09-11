@@ -4,6 +4,7 @@ using System.Linq;
 using FluentAssertions;
 using NUnit.Framework;
 using Toscana.Common;
+using Toscana.Engine;
 using Toscana.Exceptions;
 
 namespace Toscana.Tests.Engine
@@ -279,7 +280,7 @@ node_types:
                 numCpusProperty.Required.Should().BeTrue();
                 numCpusProperty.Status.Should().Be(ToscaPropertyStatus.supported);
                 numCpusProperty.EntrySchema.Should().BeNull();
-                numCpusProperty.Constraints.Should().BeNull();
+                numCpusProperty.Constraints.Should().BeEmpty();
             }
         }
 
@@ -853,6 +854,30 @@ node_types:
         }
 
         [Test]
+        public void Data_Types_Should_Be_Parsed()
+        {
+            var toscaAsString = @"
+tosca_definitions_version: tosca_simple_yaml_1_0
+data_types:
+  tosca.datatypes.Complex:
+    properties:
+      real:
+        type: integer
+      imaginary:
+        type: float";
+
+            using (var memoryStream = toscaAsString.ToMemoryStream())
+            {
+                // Act
+                var toscaSimpleProfile = ToscaServiceTemplate.Parse(memoryStream);
+
+                // Assert
+                toscaSimpleProfile.DataTypes["tosca.datatypes.Complex"].Properties["real"].Type.Should().Be("integer");
+                toscaSimpleProfile.DataTypes["tosca.datatypes.Complex"].Properties["imaginary"].Type.Should().Be("float");
+            }
+        }
+
+        [Test]
         public void ToscaParsingException_Should_Be_Thrown_When_Wrong_Tosca_Parsed()
         {
             Action action = () =>
@@ -866,6 +891,24 @@ node_types:
             action.ShouldThrow<ToscaParsingException>()
                 .WithMessage(@"(Line: 1, Col: 1, Idx: 0) - (Line: 1, Col: 1, Idx: 0): Exception during deserialization
 Property 'unsupported_something' not found on type 'Toscana.ToscaServiceTemplate'.");
+        }
+
+        [Test]
+        public void MyMethod()
+        {
+            var toscaDataTypeValueConverters = new List<IToscaDataTypeValueConverter>
+            {
+                new ToscaBooleanDataTypeConverter(),
+                new ToscaStringDataTypeConverter(),
+                new ToscaIntegerDataTypeConverter(),
+                new ToscaFloatDataTypeConverter(),
+                new ToscaNullDataTypeConverter()
+            };
+            var toscaDataTypeValueConverter = new ToscaParserFactory(toscaDataTypeValueConverters).GetParser("string");
+
+            toscaDataTypeValueConverter.CanConvert("string").Should().BeTrue();
+            object result;
+            toscaDataTypeValueConverter.TryParse("string value", out result).Should().BeTrue();
         }
     }
 }
