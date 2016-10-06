@@ -8,14 +8,18 @@ items:
   - Toscana.ToscaServiceTemplate.#ctor
   - Toscana.ToscaServiceTemplate.ArtifactTypes
   - Toscana.ToscaServiceTemplate.CapabilityTypes
+  - Toscana.ToscaServiceTemplate.DataTypes
   - Toscana.ToscaServiceTemplate.Description
   - Toscana.ToscaServiceTemplate.DslDefinitions
   - Toscana.ToscaServiceTemplate.Imports
+  - Toscana.ToscaServiceTemplate.Load(System.IO.Stream)
+  - Toscana.ToscaServiceTemplate.Load(System.String)
   - Toscana.ToscaServiceTemplate.Metadata
   - Toscana.ToscaServiceTemplate.NodeTypes
-  - Toscana.ToscaServiceTemplate.Parse(System.IO.Stream)
   - Toscana.ToscaServiceTemplate.RelationshipTypes
   - Toscana.ToscaServiceTemplate.Repositories
+  - Toscana.ToscaServiceTemplate.Save(System.IO.Stream)
+  - Toscana.ToscaServiceTemplate.Save(System.String)
   - Toscana.ToscaServiceTemplate.TopologyTemplate
   - Toscana.ToscaServiceTemplate.ToscaDefinitionsVersion
   langs:
@@ -32,7 +36,7 @@ items:
       repo: https://github.com/QualiSystems/Toscana.git
     id: ToscaServiceTemplate
     path: Toscana/ToscaServiceTemplate.cs
-    startLine: 13
+    startLine: 14
   assemblies:
   - Toscana
   namespace: Toscana
@@ -78,7 +82,7 @@ items:
       repo: https://github.com/QualiSystems/Toscana.git
     id: .ctor
     path: Toscana/ToscaServiceTemplate.cs
-    startLine: 18
+    startLine: 19
   assemblies:
   - Toscana
   namespace: Toscana
@@ -109,7 +113,7 @@ items:
       repo: https://github.com/QualiSystems/Toscana.git
     id: ToscaDefinitionsVersion
     path: Toscana/ToscaServiceTemplate.cs
-    startLine: 31
+    startLine: 33
   assemblies:
   - Toscana
   namespace: Toscana
@@ -163,7 +167,7 @@ items:
       repo: https://github.com/QualiSystems/Toscana.git
     id: Metadata
     path: Toscana/ToscaServiceTemplate.cs
-    startLine: 38
+    startLine: 40
   assemblies:
   - Toscana
   namespace: Toscana
@@ -199,7 +203,7 @@ items:
       repo: https://github.com/QualiSystems/Toscana.git
     id: Description
     path: Toscana/ToscaServiceTemplate.cs
-    startLine: 43
+    startLine: 45
   assemblies:
   - Toscana
   namespace: Toscana
@@ -235,7 +239,7 @@ items:
       repo: https://github.com/QualiSystems/Toscana.git
     id: DslDefinitions
     path: Toscana/ToscaServiceTemplate.cs
-    startLine: 48
+    startLine: 50
   assemblies:
   - Toscana
   namespace: Toscana
@@ -271,7 +275,7 @@ items:
       repo: https://github.com/QualiSystems/Toscana.git
     id: Repositories
     path: Toscana/ToscaServiceTemplate.cs
-    startLine: 54
+    startLine: 56
   assemblies:
   - Toscana
   namespace: Toscana
@@ -307,7 +311,7 @@ items:
       repo: https://github.com/QualiSystems/Toscana.git
     id: Imports
     path: Toscana/ToscaServiceTemplate.cs
-    startLine: 60
+    startLine: 62
   assemblies:
   - Toscana
   namespace: Toscana
@@ -343,7 +347,7 @@ items:
       repo: https://github.com/QualiSystems/Toscana.git
     id: ArtifactTypes
     path: Toscana/ToscaServiceTemplate.cs
-    startLine: 65
+    startLine: 67
   assemblies:
   - Toscana
   namespace: Toscana
@@ -379,7 +383,7 @@ items:
       repo: https://github.com/QualiSystems/Toscana.git
     id: CapabilityTypes
     path: Toscana/ToscaServiceTemplate.cs
-    startLine: 70
+    startLine: 72
   assemblies:
   - Toscana
   namespace: Toscana
@@ -415,7 +419,7 @@ items:
       repo: https://github.com/QualiSystems/Toscana.git
     id: TopologyTemplate
     path: Toscana/ToscaServiceTemplate.cs
-    startLine: 76
+    startLine: 78
   assemblies:
   - Toscana
   namespace: Toscana
@@ -451,7 +455,7 @@ items:
       repo: https://github.com/QualiSystems/Toscana.git
     id: NodeTypes
     path: Toscana/ToscaServiceTemplate.cs
-    startLine: 81
+    startLine: 83
   assemblies:
   - Toscana
   namespace: Toscana
@@ -487,7 +491,7 @@ items:
       repo: https://github.com/QualiSystems/Toscana.git
     id: RelationshipTypes
     path: Toscana/ToscaServiceTemplate.cs
-    startLine: 86
+    startLine: 88
   assemblies:
   - Toscana
   namespace: Toscana
@@ -505,33 +509,69 @@ items:
   - set
   modifiers.vb:
   - Public
-- uid: Toscana.ToscaServiceTemplate.Parse(System.IO.Stream)
-  commentId: M:Toscana.ToscaServiceTemplate.Parse(System.IO.Stream)
-  id: Parse(System.IO.Stream)
+- uid: Toscana.ToscaServiceTemplate.DataTypes
+  commentId: P:Toscana.ToscaServiceTemplate.DataTypes
+  id: DataTypes
   parent: Toscana.ToscaServiceTemplate
   langs:
   - csharp
   - vb
-  name: Parse(Stream)
-  nameWithType: ToscaServiceTemplate.Parse(Stream)
-  fullName: Toscana.ToscaServiceTemplate.Parse(System.IO.Stream)
+  name: DataTypes
+  nameWithType: ToscaServiceTemplate.DataTypes
+  fullName: Toscana.ToscaServiceTemplate.DataTypes
+  type: Property
+  source:
+    remote:
+      path: Toscana/ToscaServiceTemplate.cs
+      branch: master
+      repo: https://github.com/QualiSystems/Toscana.git
+    id: DataTypes
+    path: Toscana/ToscaServiceTemplate.cs
+    startLine: 93
+  assemblies:
+  - Toscana
+  namespace: Toscana
+  summary: "\nDeclares a list of optional TOSCA Data Type definitions.\n"
+  example: []
+  syntax:
+    content: public Dictionary<string, ToscaDataTypeDefinition> DataTypes { get; set; }
+    content.vb: Public Property DataTypes As Dictionary(Of String, ToscaDataTypeDefinition)
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,Toscana.ToscaDataTypeDefinition}
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Toscana.ToscaServiceTemplate.Load(System.IO.Stream)
+  commentId: M:Toscana.ToscaServiceTemplate.Load(System.IO.Stream)
+  id: Load(System.IO.Stream)
+  parent: Toscana.ToscaServiceTemplate
+  langs:
+  - csharp
+  - vb
+  name: Load(Stream)
+  nameWithType: ToscaServiceTemplate.Load(Stream)
+  fullName: Toscana.ToscaServiceTemplate.Load(System.IO.Stream)
   type: Method
   source:
     remote:
       path: Toscana/ToscaServiceTemplate.cs
       branch: master
       repo: https://github.com/QualiSystems/Toscana.git
-    id: Parse
+    id: Load
     path: Toscana/ToscaServiceTemplate.cs
-    startLine: 93
+    startLine: 101
   assemblies:
   - Toscana
   namespace: Toscana
   summary: "\nParses stream of TOSCA YAML file into an instance of ToscaServiceTemplate class\n"
   example: []
   syntax:
-    content: public static ToscaServiceTemplate Parse(Stream stream)
-    content.vb: Public Shared Function Parse(stream As Stream) As ToscaServiceTemplate
+    content: public static ToscaServiceTemplate Load(Stream stream)
+    content.vb: Public Shared Function Load(stream As Stream) As ToscaServiceTemplate
     parameters:
     - id: stream
       type: System.IO.Stream
@@ -539,12 +579,130 @@ items:
     return:
       type: Toscana.ToscaServiceTemplate
       description: Valid instance of ToscaServiceTemplate
+  exceptions:
+  - type: Toscana.Exceptions.ToscaParsingException
+    commentId: T:Toscana.Exceptions.ToscaParsingException
+    description: Thrown when YAML is not valid
   modifiers.csharp:
   - public
   - static
   modifiers.vb:
   - Public
   - Shared
+- uid: Toscana.ToscaServiceTemplate.Load(System.String)
+  commentId: M:Toscana.ToscaServiceTemplate.Load(System.String)
+  id: Load(System.String)
+  parent: Toscana.ToscaServiceTemplate
+  langs:
+  - csharp
+  - vb
+  name: Load(String)
+  nameWithType: ToscaServiceTemplate.Load(String)
+  fullName: Toscana.ToscaServiceTemplate.Load(System.String)
+  type: Method
+  source:
+    remote:
+      path: Toscana/ToscaServiceTemplate.cs
+      branch: master
+      repo: https://github.com/QualiSystems/Toscana.git
+    id: Load
+    path: Toscana/ToscaServiceTemplate.cs
+    startLine: 113
+  assemblies:
+  - Toscana
+  namespace: Toscana
+  summary: "\nParses stream of TOSCA YAML file into an instance of ToscaServiceTemplate class\n"
+  example: []
+  syntax:
+    content: public static ToscaServiceTemplate Load(string filePath)
+    content.vb: Public Shared Function Load(filePath As String) As ToscaServiceTemplate
+    parameters:
+    - id: filePath
+      type: System.String
+      description: Path to the file
+    return:
+      type: Toscana.ToscaServiceTemplate
+      description: Valid instance of ToscaServiceTemplate
+  exceptions:
+  - type: Toscana.Exceptions.ToscaParsingException
+    commentId: T:Toscana.Exceptions.ToscaParsingException
+    description: Thrown when file is not valid according to YAML or TOSCA
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Toscana.ToscaServiceTemplate.Save(System.IO.Stream)
+  commentId: M:Toscana.ToscaServiceTemplate.Save(System.IO.Stream)
+  id: Save(System.IO.Stream)
+  parent: Toscana.ToscaServiceTemplate
+  langs:
+  - csharp
+  - vb
+  name: Save(Stream)
+  nameWithType: ToscaServiceTemplate.Save(Stream)
+  fullName: Toscana.ToscaServiceTemplate.Save(System.IO.Stream)
+  type: Method
+  source:
+    remote:
+      path: Toscana/ToscaServiceTemplate.cs
+      branch: master
+      repo: https://github.com/QualiSystems/Toscana.git
+    id: Save
+    path: Toscana/ToscaServiceTemplate.cs
+    startLine: 123
+  assemblies:
+  - Toscana
+  namespace: Toscana
+  summary: "\nSaves the ServiceTemplate to provided stream\n"
+  example: []
+  syntax:
+    content: public void Save(Stream stream)
+    content.vb: Public Sub Save(stream As Stream)
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+      description: Stream to save
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Toscana.ToscaServiceTemplate.Save(System.String)
+  commentId: M:Toscana.ToscaServiceTemplate.Save(System.String)
+  id: Save(System.String)
+  parent: Toscana.ToscaServiceTemplate
+  langs:
+  - csharp
+  - vb
+  name: Save(String)
+  nameWithType: ToscaServiceTemplate.Save(String)
+  fullName: Toscana.ToscaServiceTemplate.Save(System.String)
+  type: Method
+  source:
+    remote:
+      path: Toscana/ToscaServiceTemplate.cs
+      branch: master
+      repo: https://github.com/QualiSystems/Toscana.git
+    id: Save
+    path: Toscana/ToscaServiceTemplate.cs
+    startLine: 133
+  assemblies:
+  - Toscana
+  namespace: Toscana
+  summary: "\nSaves the instance of ToscaServiceTemplate to specified file\n"
+  example: []
+  syntax:
+    content: public void Save(string path)
+    content.vb: Public Sub Save(path As String)
+    parameters:
+    - id: path
+      type: System.String
+      description: File path to save
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
 references:
 - uid: Toscana
   commentId: N:Toscana
@@ -1764,6 +1922,70 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Collections.Generic.Dictionary{System.String,Toscana.ToscaDataTypeDefinition}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,Toscana.ToscaDataTypeDefinition}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  name: Dictionary<String, ToscaDataTypeDefinition>
+  nameWithType: Dictionary<String, ToscaDataTypeDefinition>
+  fullName: System.Collections.Generic.Dictionary<System.String, Toscana.ToscaDataTypeDefinition>
+  nameWithType.vb: Dictionary(Of String, ToscaDataTypeDefinition)
+  fullname.vb: System.Collections.Generic.Dictionary(Of System.String, Toscana.ToscaDataTypeDefinition)
+  name.vb: Dictionary(Of String, ToscaDataTypeDefinition)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Toscana.ToscaDataTypeDefinition
+    name: ToscaDataTypeDefinition
+    nameWithType: ToscaDataTypeDefinition
+    fullName: Toscana.ToscaDataTypeDefinition
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Toscana.ToscaDataTypeDefinition
+    name: ToscaDataTypeDefinition
+    nameWithType: ToscaDataTypeDefinition
+    fullName: Toscana.ToscaDataTypeDefinition
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Toscana.Exceptions.ToscaParsingException
+  commentId: T:Toscana.Exceptions.ToscaParsingException
+  isExternal: false
+  name: ToscaParsingException
+  nameWithType: ToscaParsingException
+  fullName: Toscana.Exceptions.ToscaParsingException
 - uid: System.IO.Stream
   commentId: T:System.IO.Stream
   parent: System.IO

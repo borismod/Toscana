@@ -95,6 +95,7 @@
     <Compile Include="Common\ZipArchiveExtensions.cs" />
     <Compile Include="Engine\Bfs.cs" />
     <Compile Include="Engine\Bootstrapper.cs" />
+    <Compile Include="Engine\ToscaServiceTemplateSaver.cs" />
     <Compile Include="Engine\ToscaBooleanDataTypeConverter.cs" />
     <Compile Include="Engine\ToscaFloatDataTypeConverter.cs" />
     <Compile Include="Engine\ToscaIntegerDataTypeConverter.cs" />
@@ -102,7 +103,7 @@
     <Compile Include="Engine\ToscaParserFactory.cs" />
     <Compile Include="Engine\StringToscaDataTypeConverter.cs" />
     <Compile Include="Engine\ToscaSerializer.cs" />
-    <Compile Include="Engine\PoorManContainer.cs" />
+    <Compile Include="Engine\SimpleIocContainer.cs" />
     <Compile Include="Engine\ToscaCloudServiceArchiveLoader.cs" />
     <Compile Include="Engine\ToscaCloudServiceArchiveSaver.cs" />
     <Compile Include="Engine\ToscaNodeTypeInheritanceWalker.cs">
@@ -114,6 +115,7 @@
     <Compile Include="Engine\TypeConvertersFactory.cs" />
     <Compile Include="Engine\ValidationResultEqualityComparer.cs" />
     <Compile Include="Engine\VersionTypeConverter.cs" />
+    <Compile Include="Exceptions\ToscaInvalidFileException.cs" />
     <Compile Include="Exceptions\ToscaArtifactNotFoundException.cs" />
     <Compile Include="Exceptions\ToscaCapabilityTypeNotFoundException.cs" />
     <Compile Include="Exceptions\ToscaCloudServiceArchiveFileNotFoundException.cs" />
@@ -152,6 +154,7 @@
     <Compile Include="ToscaNodeTemplate.cs" />
     <Compile Include="ToscaNodeType.cs" />
     <Compile Include="ToscaObject.cs" />
+    <Compile Include="ToscaPropertyEntrySchema.cs" />
     <Compile Include="ToscaPropertyStatus.cs" />
     <Compile Include="ToscaRelationshipTemplate.cs" />
     <Compile Include="ToscaRelationshipType.cs" />

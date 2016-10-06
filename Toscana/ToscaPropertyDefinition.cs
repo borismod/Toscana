@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using Toscana.Engine;
+using YamlDotNet.Serialization;
 
 namespace Toscana
 {
@@ -61,7 +62,7 @@ namespace Toscana
         ///     The optional key that is used to declare the name of the Datatype definition for entries of set types such as the
         ///     TOSCA list or map.
         /// </summary>
-        public string EntrySchema { get; set; }
+        public ToscaPropertyEntrySchema EntrySchema { get; set; }
 
         /// <summary>
         ///     The optional list of tags
@@ -72,6 +73,7 @@ namespace Toscana
         ///     String representation of Default property.
         ///     Returns empty string when default is null
         /// </summary>
+        [YamlIgnore]
         public string StringValue
         {
             get { return Default == null ? string.Empty : Default.ToString(); }
@@ -84,7 +86,7 @@ namespace Toscana
             var validValuesConstraint = Constraints.FirstOrDefault(c => c.ContainsKey(ValidValues));
             if (validValuesConstraint != null)
             {
-                var parser = new Bootstrapper().GetParser<object>(Type);
+                var parser = Bootstrapper.Current.GetParser<object>(Type);
                 var validValues = validValuesConstraint[ValidValues];
                 if (!(validValues is List<object>))
                 {
@@ -106,6 +108,16 @@ namespace Toscana
                 }
             }
             return validatuResults;
+        }
+
+        /// <summary>
+        /// Adds a constraint to the property definition
+        /// </summary>
+        /// <param name="contraintName">Constraint name, like greater_or_equal, valid_values</param>
+        /// <param name="constraintValue">Constraint values</param>
+        public void AddConstraint(string contraintName, object constraintValue)
+        {
+            Constraints.Add(new Dictionary<string, object> { {contraintName, constraintValue} });
         }
     }
 }

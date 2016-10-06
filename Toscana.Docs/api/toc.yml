@@ -2,6 +2,8 @@
 - uid: Toscana
   name: Toscana
   items:
+  - uid: Toscana.IToscaMetadata
+    name: IToscaMetadata
   - uid: Toscana.ToscaArtifact
     name: ToscaArtifact
   - uid: Toscana.ToscaArtifactType
@@ -20,6 +22,8 @@
     name: ToscaCloudServiceArchive
   - uid: Toscana.ToscaCredential
     name: ToscaCredential
+  - uid: Toscana.ToscaDataTypeDefinition
+    name: ToscaDataTypeDefinition
   - uid: Toscana.ToscaDefaults
     name: ToscaDefaults
   - uid: Toscana.ToscaGroup
@@ -45,6 +49,8 @@
     name: ToscaPropertyAssignment
   - uid: Toscana.ToscaPropertyDefinition
     name: ToscaPropertyDefinition
+  - uid: Toscana.ToscaPropertyEntrySchema
+    name: ToscaPropertyEntrySchema
   - uid: Toscana.ToscaPropertyStatus
     name: ToscaPropertyStatus
   - uid: Toscana.ToscaRelationshipTemplate
@@ -66,14 +72,16 @@
 - uid: Toscana.Exceptions
   name: Toscana.Exceptions
   items:
-  - uid: Toscana.Exceptions.ArtifactNotFoundException
-    name: ArtifactNotFoundException
+  - uid: Toscana.Exceptions.ToscaArtifactNotFoundException
+    name: ToscaArtifactNotFoundException
   - uid: Toscana.Exceptions.ToscaBaseException
     name: ToscaBaseException
   - uid: Toscana.Exceptions.ToscaCapabilityTypeNotFoundException
     name: ToscaCapabilityTypeNotFoundException
   - uid: Toscana.Exceptions.ToscaCloudServiceArchiveFileNotFoundException
     name: ToscaCloudServiceArchiveFileNotFoundException
+  - uid: Toscana.Exceptions.ToscaDataTypeNotFoundException
+    name: ToscaDataTypeNotFoundException
   - uid: Toscana.Exceptions.ToscaImportFileNotFoundException
     name: ToscaImportFileNotFoundException
   - uid: Toscana.Exceptions.ToscaMetadataFileNotFoundException
@@ -84,5 +92,7 @@
     name: ToscaParsingException
   - uid: Toscana.Exceptions.ToscaRelationshipTypeNotFound
     name: ToscaRelationshipTypeNotFound
+  - uid: Toscana.Exceptions.ToscaServiceTemplateAlreadyExistsException
+    name: ToscaServiceTemplateAlreadyExistsException
   - uid: Toscana.Exceptions.ToscaValidationException
     name: ToscaValidationException
